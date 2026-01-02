@@ -55,7 +55,7 @@ fun longestRepeatingCharacterOldCode(text: String): String {
             }
         }
 
-        result = if (longestCount< 2) {"no repeating characters"} else {"Longest repeating letter is $longestChar"}
+        result = if (longestCount< 2) {"no repeating characters in \"$text\""} else {"Longest repeating character in \"$text\", is $longestChar"}
     }
 
     return "$result [${timeElapsed / 1_000_000.0} ms] old code."
@@ -64,26 +64,39 @@ fun longestRepeatingCharacterOldCode(text: String): String {
 fun longestRepeatingCharacter(text: String): String {
     var result = ""
 
+    // Measures how long the enclosed block takes to execute (in nanoseconds)
     val timeElapsed = kotlin.system.measureNanoTime {
+
+        // Early exit for empty input
         if (text.isEmpty()) {
             result = "no repeating characters"
-            return@measureNanoTime
+            return@measureNanoTime // exits only the timing block, not the function
         }
 
+        // LinkedHashMap preserves insertion order
+        // This helps ensure we return the character that appears first
+        // in case of a tie in frequency
         val counts = LinkedHashMap<Char, Int>()
 
+        // Iterate through each character in the string
         for (c in text) {
-            if (!c.isLetterOrDigit()) continue
+            // Skip characters that are white spaces. Commented condition that skips non letter characters
+            if (c == ' ' /*|| !c.isLetter()*/) continue
+
+            // Convert to lowercase to make counting case-insensitive
             val ch = c.lowercaseChar()
+
+            // Increment the count for this character
             counts[ch] = counts.getOrDefault(ch, 0) + 1
         }
 
+        // Find the character with the highest occurrence count
         val maxEntry = counts.maxByOrNull { it.value }
 
         result = if (maxEntry == null || maxEntry.value < 2) {
-            "no repeating characters"
+            "no repeating characters in \"$text\""
         } else {
-            "Longest repeating letter is ${maxEntry.key}"
+            "Longest repeating character in \"$text\", is ${maxEntry.key}"
         }
     }
 

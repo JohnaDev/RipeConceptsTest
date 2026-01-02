@@ -2,10 +2,10 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
     println(longestRepeatingCharacter("a"))
-//    println(longestRepeatingLetter("a b c d"))
-//    println(longestRepeatingLetter("Mississippi"))
-//    println(longestRepeatingLetter("If it ain’t broke, don’t fix it"))
-//    println(longestRepeatingLetter("111 222 33333 @@@@@@@"))
+    println(longestRepeatingCharacter("a b c d"))
+    println(longestRepeatingCharacter("Mississippi"))
+    println(longestRepeatingCharacter("If it ain’t broke, don’t fix it"))
+    println(longestRepeatingCharacter("111 222 33333 @@@@@@@"))
 
 
     println(longestRepeatingCharacter("Mississippi Mississippi Mississippi Mississippi Mississippi Mississippi Mississippi Mississippi"))
@@ -13,10 +13,10 @@ fun main() {
     println("----------------------------------------------------------")
 
     println(longestRepeatingCharacterOldCode("a"))
-//    println(longestText("a b c d"))
-//    println(longestText("Mississippi"))
-//    println(longestText("If it ain’t broke, don’t fix it"))
-//    println(longestText("111 222 33333 @@@@@@@"))
+    println(longestRepeatingCharacterOldCode("a b c d"))
+    println(longestRepeatingCharacterOldCode("Mississippi"))
+    println(longestRepeatingCharacterOldCode("If it ain’t broke, don’t fix it"))
+    println(longestRepeatingCharacterOldCode("111 222 33333 @@@@@@@"))
 
     println(longestRepeatingCharacterOldCode("Mississippi Mississippi Mississippi Mississippi Mississippi Mississippi Mississippi Mississippi"))
 }

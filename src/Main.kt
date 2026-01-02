@@ -58,7 +58,7 @@ fun longestRepeatingCharacterOldCode(text: String): String {
         result = if (longestCount< 2) {"no repeating characters in \"$text\""} else {"Longest repeating character in \"$text\", is $longestChar"}
     }
 
-    return "$result [${timeElapsed / 1_000_000.0} ms] old code."
+    return "$result [${timeElapsed / 1000000.0} ms] old code."
 }
 
 fun longestRepeatingCharacter(text: String): String {
@@ -100,5 +100,5 @@ fun longestRepeatingCharacter(text: String): String {
         }
     }
 
-    return "$result [${timeElapsed / 1_000_000.0} ms]"
+    return "$result [${timeElapsed / 1000000.0} ms]"
 }

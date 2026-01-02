@@ -100,5 +100,5 @@ fun longestRepeatingCharacter(text: String): String {
         }
     }
 
-    return "$result [${timeElapsed / 1_000_000.0} ms]"
+    return "$result [${timeElapsed / 1000000} ms]"
 }

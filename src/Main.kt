@@ -1,24 +1,30 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 fun main() {
     println(longestRepeatingCharacter("a"))
-    println(longestRepeatingCharacter("a b c d"))
-    println(longestRepeatingCharacter("Mississippi"))
-    println(longestRepeatingCharacter("If it ain’t broke, don’t fix it"))
-    println(longestRepeatingCharacter("111 222 33333 @@@@@@@"))
-
-
-    println(longestRepeatingCharacter("Mississippi Mississippi Mississippi Mississippi Mississippi Mississippi Mississippi Mississippi"))
-
+    println(longestRepeatingCharacterOldCode("a"))
     println("----------------------------------------------------------")
 
-    println(longestRepeatingCharacterOldCode("a"))
+    println(longestRepeatingCharacter("a b c d"))
     println(longestRepeatingCharacterOldCode("a b c d"))
-    println(longestRepeatingCharacterOldCode("Mississippi"))
-    println(longestRepeatingCharacterOldCode("If it ain’t broke, don’t fix it"))
-    println(longestRepeatingCharacterOldCode("111 222 33333 @@@@@@@"))
+    println("----------------------------------------------------------")
 
+    println(longestRepeatingCharacter("Mississippi"))
+    println(longestRepeatingCharacterOldCode("Mississippi"))
+    println("----------------------------------------------------------")
+
+    println(longestRepeatingCharacter("If it ain’t broke, don’t fix it"))
+    println(longestRepeatingCharacterOldCode("If it ain’t broke, don’t fix it"))
+    println("----------------------------------------------------------")
+
+    println(longestRepeatingCharacter("111 222 33333 @@@@@@@"))
+    println(longestRepeatingCharacterOldCode("111 222 33333 @@@@@@@"))
+    println("----------------------------------------------------------")
+
+    println(longestRepeatingCharacter("Mississippi Mississippi Mississippi Mississippi Mississippi Mississippi Mississippi Mississippi"))
     println(longestRepeatingCharacterOldCode("Mississippi Mississippi Mississippi Mississippi Mississippi Mississippi Mississippi Mississippi"))
+
+
+
 }
 
 fun longestRepeatingCharacterOldCode(text: String): String {
@@ -55,7 +61,7 @@ fun longestRepeatingCharacterOldCode(text: String): String {
             }
         }
 
-        result = if (longestCount< 2) {"no repeating characters in \"$text\""} else {"Longest repeating character in \"$text\", is $longestChar"}
+        result = if (longestCount< 2) {"no repeating characters in \"$text\""} else {"Longest repeating character in \"$text\", is \"$longestChar\", called $longestCount times"}
     }
 
     return "$result [${timeElapsed / 1000000.0} ms] old code."
@@ -96,7 +102,7 @@ fun longestRepeatingCharacter(text: String): String {
         result = if (maxEntry == null || maxEntry.value < 2) {
             "no repeating characters in \"$text\""
         } else {
-            "Longest repeating character in \"$text\", is ${maxEntry.key}"
+            "Longest repeating character in \"$text\", is \"${maxEntry.key}\", called ${maxEntry.value} times"
         }
     }
 

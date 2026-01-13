@@ -16,12 +16,16 @@ class Pet {
         val dog3 = Dog("Ghost", "Poodle Terrier", 9, "Female")
         val dog4 = dog1.copy(name = "Junpyo", age = 5)
         val dog5 = dog4.copy(gender = "Female", name = "Suzy")
+        val dog6 = createReese()
 
         println(dog1.toString())
         println(dog2)
         println(dog3)
         println(dog4)
         println(dog5)
+
+        println("${dog1.name}: ${dog1.hashCode()}")
+        println("${dog6.name}: ${dog6.hashCode()}")
 
         println("Is ${dog1.name} male? ${dog1.isMale()}")
     }

@@ -1,6 +1,7 @@
 
 fun main() {
 //    LongestChar().main()
-    Pet().generateDogs()
+//    Pet().generateDogs()
 //    ExtensionFunction().isEmail("test@gmail.com")
+    SimulateResult().start()
 }
